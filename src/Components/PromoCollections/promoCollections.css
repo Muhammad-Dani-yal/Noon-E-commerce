@@ -1,0 +1,92 @@
+.promo-collections {
+  margin: 0 34px 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.promo-group {
+  padding: 14px;
+  background-color: #ffffff;
+}
+
+.promo-group h2 {
+  margin: 0 0 12px;
+  color: #101628;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.reason-card,
+.focus-card {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  background-color: #f4f6f8;
+  text-decoration: none;
+}
+
+.reason-card img,
+.focus-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 160ms ease;
+}
+
+.reason-card img {
+  height: 170px;
+}
+
+.focus-card img {
+  height: 220px;
+}
+
+.reason-card:hover img,
+.focus-card:hover img {
+  transform: scale(1.015);
+}
+
+@media (max-width: 900px) {
+  .promo-collections {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .reason-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .promo-collections {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .promo-group h2 {
+    font-size: 18px;
+  }
+
+  .reason-grid,
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reason-card img,
+  .focus-card img {
+    height: 180px;
+  }
+}
