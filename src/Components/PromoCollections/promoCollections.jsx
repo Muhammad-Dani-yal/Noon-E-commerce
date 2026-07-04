@@ -1,33 +1,32 @@
+import shop1 from '../../assets/shop 1.avif'
+import shop2 from '../../assets/shop 2.avif'
+import shop3 from '../../assets/shop 3.avif'
+import shop4 from '../../assets/shop 4.avif'
+import shop5 from '../../assets/shop 5.avif'
+import shop6 from '../../assets/shop 6.avif'
+import shop7 from '../../assets/shop 7.avif'
+import shop8 from '../../assets/shop 8.avif'
+import shop9 from '../../assets/shop 9.avif'
+import shop10 from '../../assets/shop 10.avif'
 import './promoCollections.css'
 
-const makePromoImage = (title, bg, accent) => {
-  const svg = `
-    <svg width="420" height="260" viewBox="0 0 420 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="420" height="260" fill="${bg}"/>
-      <circle cx="350" cy="42" r="56" fill="rgba(255,255,255,0.42)"/>
-      <circle cx="60" cy="230" r="72" fill="rgba(255,255,255,0.35)"/>
-      <rect x="30" y="34" width="360" height="192" rx="18" fill="rgba(255,255,255,0.72)"/>
-      <rect x="54" y="62" width="118" height="118" rx="16" fill="${accent}"/>
-      <rect x="194" y="72" width="148" height="16" rx="8" fill="#101628"/>
-      <rect x="194" y="104" width="108" height="12" rx="6" fill="#404553" opacity="0.35"/>
-      <rect x="194" y="128" width="132" height="12" rx="6" fill="#404553" opacity="0.25"/>
-      <text x="210" y="214" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="800" fill="#101628">${title}</text>
-    </svg>
-  `
-
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
-}
-
 const reasonCards = [
-  { title: 'Mega deals', image: makePromoImage('Mega deals', '#ffe9bf', '#ff7a1a') },
-  { title: 'Noon One', image: makePromoImage('Noon One', '#dbeafe', '#3866df') },
-  { title: 'Lowest prices', image: makePromoImage('Low prices', '#dcfce7', '#28a745') },
-  { title: 'New arrivals', image: makePromoImage('New arrivals', '#fce7f3', '#d63384') }
+  { title: 'More reasons to shop 1', image: shop1 },
+  { title: 'More reasons to shop 2', image: shop2 },
+  { title: 'More reasons to shop 3', image: shop7 },
+  { title: 'More reasons to shop 4', image: shop8 }
+]
+
+const megaCards = [
+  { title: 'Mega deal 1', image: shop3 },
+  { title: 'Mega deal 2', image: shop4 },
+  { title: 'Mega deal 3', image: shop9 },
+  { title: 'Mega deal 4', image: shop10 }
 ]
 
 const focusCards = [
-  { title: 'Beauty offers', image: makePromoImage('Beauty offers', '#ffe4ef', '#e83e8c') },
-  { title: 'Tech essentials', image: makePromoImage('Tech essentials', '#e0f2fe', '#0284c7') }
+  { title: 'In focus 1', image: shop5 },
+  { title: 'In focus 2', image: shop6 }
 ]
 
 const PromoCollections = () => {
@@ -38,7 +37,18 @@ const PromoCollections = () => {
         <div className='reason-grid'>
           {reasonCards.map((card) => (
             <a className='reason-card' href='#' key={card.title}>
-              <img src={card.image} alt={card.title} />
+              <img src={card.image} alt={card.title} loading='lazy' />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div className='promo-group'>
+        <h2>Mega deals</h2>
+        <div className='mega-grid'>
+          {megaCards.map((card) => (
+            <a className='mega-card' href='#' key={card.title}>
+              <img src={card.image} alt={card.title} loading='lazy' />
             </a>
           ))}
         </div>
@@ -49,7 +59,7 @@ const PromoCollections = () => {
         <div className='focus-grid'>
           {focusCards.map((card) => (
             <a className='focus-card' href='#' key={card.title}>
-              <img src={card.image} alt={card.title} />
+              <img src={card.image} alt={card.title} loading='lazy' />
             </a>
           ))}
         </div>

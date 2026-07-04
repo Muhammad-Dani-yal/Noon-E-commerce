@@ -1,12 +1,14 @@
 .promo-collections {
-  margin: 0 34px 14px;
+  margin: 0 34px 16px;
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
 .promo-group {
-  padding: 14px;
+  padding: 14px 14px 16px;
   background-color: #ffffff;
+  overflow: hidden;
 }
 
 .promo-group h2 {
@@ -23,22 +25,39 @@
   gap: 12px;
 }
 
+.mega-grid,
 .focus-grid {
   display: grid;
+  gap: 12px;
+}
+
+.reason-grid,
+.mega-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.focus-grid {
+  grid-template-columns: 1fr;
   gap: 12px;
 }
 
 .reason-card,
+.mega-card,
 .focus-card {
   display: block;
   min-width: 0;
   overflow: hidden;
   background-color: #f4f6f8;
+  line-height: 0;
   text-decoration: none;
 }
 
+.mega-card {
+  background-color: #f4f6f8;
+}
+
 .reason-card img,
+.mega-card img,
 .focus-card img {
   width: 100%;
   display: block;
@@ -47,14 +66,20 @@
 }
 
 .reason-card img {
-  height: 170px;
+  aspect-ratio: 712 / 700;
+}
+
+.mega-card img {
+  aspect-ratio: 320 / 436;
+  object-fit: contain;
 }
 
 .focus-card img {
-  height: 220px;
+  aspect-ratio: 706 / 320;
 }
 
 .reason-card:hover img,
+.mega-card:hover img,
 .focus-card:hover img {
   transform: scale(1.015);
 }
@@ -63,9 +88,10 @@
   .promo-collections {
     margin-left: 14px;
     margin-right: 14px;
+    grid-template-columns: 1fr;
   }
 
-  .reason-grid {
+  .focus-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -81,12 +107,8 @@
   }
 
   .reason-grid,
+  .mega-grid,
   .focus-grid {
     grid-template-columns: 1fr;
-  }
-
-  .reason-card img,
-  .focus-card img {
-    height: 180px;
   }
 }
